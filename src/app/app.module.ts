@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { DataService } from './home/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
+  providers: [DataService],
   declarations: [
     AppComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule  
   ],
  
   bootstrap: [AppComponent]

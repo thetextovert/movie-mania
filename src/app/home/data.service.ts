@@ -10,11 +10,11 @@ private dataURL = 'http://www.omdbapi.com/?s=man&page=7&apikey=dedb89d9&r=json&p
 constructor(private http: HttpClient) { }
 getMovie(): Observable<any[]> {
 
-
+console.log("inside observable");
   return this.http.get<any[]>(this.dataURL).pipe(
-    tap(data => console.log('All: ' + JSON.stringify(data))),
-    catchError(this.handleError)
-  );
+    tap(data => console.log('All: ' + JSON.stringify(data))));
+  //   catchError(this.handleError)
+  // );
     
  
 }
