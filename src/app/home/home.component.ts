@@ -12,13 +12,13 @@ export class HomeComponent implements OnInit {
 // public srcURL2= '../../assets/images/Got.jpg';
 // public srcURL3= '../../assets/images/Sacredgames.png';
 constructor(private data:DataService) { }
-public movieItem = [];
+public movieItem = {};
   
 
   ngOnInit() {
     console.log("before subscribe");
 this.data.getMovie().subscribe({
-  next: movie => this.movieItem=movie
+  next: movie => this.movieItem = movie
 
 }) ;   
     }
